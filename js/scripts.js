@@ -3,7 +3,7 @@
  * Date: 07/10/2020
  */
 
-// Parse JSON response and add elements to the page.
+// Callback: Parse JSON response and add elements to the page.
 function loadGroceryList() {
 
 	if (this.readyState === XMLHttpRequest.DONE) {
@@ -63,7 +63,7 @@ function getJSON(filePath, callback) {
 }
 
 
-// If document is already ready, execute getJSON now, otherwise, execute it on ready.
+// If document is already ready, get JSON data now, otherwise, do it on ready.
 if (document.readyState === 'loading') {
 
 	document.addEventListener('DOMContentLoaded', function () {
