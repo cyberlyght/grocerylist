@@ -21,12 +21,12 @@ function loadGroceryList() {
 				groceryItemHTML += '<div class="groceryItemCategory accent">' + item.category + '</div>';
 				
 				let groceryItemElement = document.createElement('div');
-				groceryItemElement.setAttribute('class', 'groceryItem expandInRight');
+				groceryItemElement.setAttribute('class', 'groceryItem slideFadeIn');
 				groceryItemElement.innerHTML = groceryItemHTML;
 
 				// Trigger animation on the grocery item element after a delay.
 				setTimeout(function(){
-					groceryItemElement.classList.remove('expandInRight');
+					groceryItemElement.classList.remove('slideFadeIn');
 				}, index*100+10);
 
 				let tileElement = document.createElement('li');
