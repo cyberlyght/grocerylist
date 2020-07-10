@@ -1,22 +1,24 @@
-body { font: 16px/150% Arial, sans-serif; color:#2C3A47; }
+body { font: 16px/1.5 Arial, sans-serif; color:#2C3A47; }
 h1 { font-size:36px; }
 .accent { color:#E17055; }
 
-.groceryItem { position:relative; box-sizing:border-box; height:100%; min-height:250px; border-right: 10px solid #E17055; border-bottom: 10px solid #E17055; background-color:#FFF4D5; padding: 15px 15px 60px; }
-.groceryItemQuantity { text-align:right; }
-.groceryItemName { margin-top:1em; border-bottom: 5px solid #CCC; font-size:36px; font-weight:bold; }
+.groceryItem { position:relative; box-sizing:border-box; height:100%; min-height:250px; border-right: 10px solid #E17055; border-bottom: 10px solid #E17055; background-color:#FFF4D5; padding: 10px 15px 45px; }
+.groceryItemQuantity { font-weight:bold; text-align:right; }
+.groceryItemName { margin-top:1em; margin-bottom:5px; border-bottom: 5px solid #CCC; font-size:36px; font-weight:bold; line-height:normal; }
 .groceryItemDescription { font-size:smaller; }
-.groceryItemCategory { position:absolute; left:15px; bottom:15px; text-transform:uppercase; }
+.groceryItemCategory { position:absolute; left:15px; bottom:10px; font-weight:bold; text-transform:uppercase; }
 
 @media screen and (min-width:320px) and (max-width:767px) {
 	.container { padding: 0 10px; }
+	.tile { margin-bottom:20px; }
 }
 @media screen and (min-width:768px) {
-	.tiles { display:flex; margin:-2%; }
+	.tiles { display:flex; flex-wrap:wrap; margin:-2%; }
 	.tile { margin:2%; flex-basis:21%; }
 }
 @media screen and (min-width:768px) and (max-width:1024px) {
 	.container { padding: 0 15px; }
+	.groceryItemName { font-size:30px; }
 }
 @media screen and (min-width:1025px) {
 	.container { max-width:980px; margin: 0 auto; }

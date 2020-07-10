@@ -3,15 +3,15 @@ function loadGroceryList() {
 	if (this.readyState === XMLHttpRequest.DONE) {
 		if (this.status === 200) {
 
-			const groceryList = this.response;
+			const groceryList = JSON.parse(this.response);
 			let tilesElement = document.getElementById('groceryList');
 
 			groceryList.forEach(function(item){
 				let groceryItemHTML = '<div class="groceryItem">';
-				groceryItemHTML += '<div class="groceryItemQuantity">QTY: ' + item.qty + '</div>';
+				groceryItemHTML += '<div class="groceryItemQuantity accent">QTY: ' + item.qty + '</div>';
 				groceryItemHTML += '<div class="groceryItemName">' + item.item + '</div>';
 				groceryItemHTML += '<div class="groceryItemDescription">' + item.brand + ' ' + item.type + '</div>';
-				groceryItemHTML += '<div class="groceryItemCategory">' + item.category + '</div>';
+				groceryItemHTML += '<div class="groceryItemCategory accent">' + item.category + '</div>';
 				groceryItemHTML += '</div>';
 
 				let tileElement = document.createElement('div');
@@ -24,11 +24,12 @@ function loadGroceryList() {
 		} else {
 
 			alert('Could not load grocery list.');
-			
+
 		}
 	}
 
 }
+
 
 function getJSON(filePath, callback) {
 
@@ -41,10 +42,10 @@ function getJSON(filePath, callback) {
 
 	httpRequest.onreadystatechange = callback;
 	httpRequest.open('GET', filePath);
-	httpRequest.responseType = 'json';
 	httpRequest.send();
 
 }
+
 
 if (document.readyState === 'loading') {
 
