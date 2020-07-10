@@ -18,7 +18,7 @@ function getJSON(filePath, callback) {
 	}
 	httpRequest.onreadystatechange = callback;
 	httpRequest.open('GET', filePath);
-	request.responseType = 'json';
+	httpRequest.responseType = 'json';
 	httpRequest.send();
 }
 
