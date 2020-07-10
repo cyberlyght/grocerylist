@@ -12,16 +12,18 @@ function loadGroceryList() {
 			let tilesElement = document.getElementById('groceryList');
 
 			groceryList.forEach(function(item, index){
-				let groceryItemHTML = '<div class="groceryItem">';
-				groceryItemHTML += '<div class="groceryItemQuantity accent">QTY: ' + item.qty + '</div>';
+				let groceryItemHTML = '<div class="groceryItemQuantity accent">QTY: ' + item.qty + '</div>';
 				groceryItemHTML += '<div class="groceryItemName">' + item.item + '</div>';
 				groceryItemHTML += '<div class="groceryItemDescription">' + item.brand + ' ' + item.type + '</div>';
 				groceryItemHTML += '<div class="groceryItemCategory accent">' + item.category + '</div>';
-				groceryItemHTML += '</div>';
+				
+				let groceryItemElement = document.createElement('div');
+				groceryItemElement.setAttribute('class', 'groceryItem');
+				groceryItemElement.innerHTML = groceryItemHTML;
 
 				let tileElement = document.createElement('li');
 				tileElement.setAttribute('class', 'tile');
-				tileElement.innerHTML = groceryItemHTML;
+				tileElement.appendChild(groceryItemElement);
 
 				tilesElement.appendChild(tileElement);
 			});
