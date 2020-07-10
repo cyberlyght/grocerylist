@@ -1,3 +1,8 @@
+/*
+ * Author: David Sampson
+ * Date: 07/10/2020
+ */
+
 function loadGroceryList() {
 
 	if (this.readyState === XMLHttpRequest.DONE) {
@@ -6,7 +11,7 @@ function loadGroceryList() {
 			const groceryList = JSON.parse(this.response);
 			let tilesElement = document.getElementById('groceryList');
 
-			groceryList.forEach(function(item){
+			groceryList.forEach(function(item, index){
 				let groceryItemHTML = '<div class="groceryItem">';
 				groceryItemHTML += '<div class="groceryItemQuantity accent">QTY: ' + item.qty + '</div>';
 				groceryItemHTML += '<div class="groceryItemName">' + item.item + '</div>';
@@ -14,7 +19,7 @@ function loadGroceryList() {
 				groceryItemHTML += '<div class="groceryItemCategory accent">' + item.category + '</div>';
 				groceryItemHTML += '</div>';
 
-				let tileElement = document.createElement('div');
+				let tileElement = document.createElement('li');
 				tileElement.setAttribute('class', 'tile');
 				tileElement.innerHTML = groceryItemHTML;
 
