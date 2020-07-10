@@ -1,8 +1,8 @@
 function loadGroceryList() {
 	if (this.readyState === XMLHttpRequest.DONE) {
 		if (this.status === 200) {
-			const groceryListObj = this.response;
-			console.log('groceryListObj');
+			const groceryListObject = this.response;
+			console.log('groceryListObject');
 		} else {
 			alert('Could not load grocery list.');
 		}
@@ -24,8 +24,8 @@ function getJSON(filePath, callback) {
 
 if (document.readyState === 'loading') {
 	document.addEventListener('DOMContentLoaded', function () {
-		getJSON('groceries.json', loadGroceryList);
+		getJSON('data/groceries.json', loadGroceryList);
 	});
 } else {
-	getJSON('groceries.json', loadGroceryList);
+	getJSON('data/groceries.json', loadGroceryList);
 }
