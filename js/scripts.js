@@ -3,7 +3,7 @@
  * Date: 07/10/2020
  */
 
-// Callback: Parse JSON response and add elements to the page.
+// XMLHttpRequest callback: Parse JSON response and add elements to the page.
 function loadGroceryList() {
 
 	if (this.readyState === XMLHttpRequest.DONE) {
